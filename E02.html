@@ -1,0 +1,35 @@
+<script>
+    //PROBLEMA
+    /*
+    Em uma loja de roupas, são realizadas várias vendas durante o dia. Essas vendas deverão ser separadas para pagamento A VISTA (V) ou em CARNÊ (C).
+    Pergunte ao vendedor quantos quantas vendas foram feitas com pagamento A VISTA e quantas foram feitas com pagamento em CARNÊ.
+     Contabilize as vendas pelo seu tipo e também some o preço das vendas A VISTA e das vendas em CARNÊ.
+    Ao fim do programa, apresente o Valor total vendido pela Loja. 
+    Também apresente a quantidade e o valor das vendas A VISTA e a quantidade e o valor das vendas em CARNÊ.
+    */
+    
+    //ENTRADA
+const vendas = parseInt(prompt("quantas vendas foram feitas?"))
+
+//PROCESSAMENTO
+let vendasV = 0
+let vendasC = 0
+let totalvendasV = 0
+let totalvendasC = 0
+
+for (let i = 0; i < vendas; i++) {
+    let valor = Number(prompt("qual o valor da venda?"))
+    let tipo = prompt("vendas em carne = C ou à vista = V").toUpperCase()
+    if(tipo === "C"){
+totalvendasC = totalvendasC + valor;
+vendasC++;
+    }
+    else {totalvendasV = totalvendasV + valor; 
+    vendasV++;
+}
+    
+}
+
+document.write(`foram feitas ${vendasC} venda(s) no carne, no valor de ${totalvendasC} <br> foram feitas ${vendasV} venda(s) à vista, no valor de ${totalvendasV} <br> valor total vendido é de ${(totalvendasC+totalvendasV)}`)
+
+</script>
